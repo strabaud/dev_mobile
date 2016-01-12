@@ -4,6 +4,7 @@
     <string name="action_settings">Settings</string>
     <string name="validate">Validate</string>
 
+    <string name="changeLang">Go to english version</string>
     <string name="textAskComment">What do you think about this app ?</string>
     <string name="editComment">fill the gap</string>
 </resources>

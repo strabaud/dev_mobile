@@ -4,6 +4,7 @@
     <string name="action_settings">Options</string>
     <string name="validate">Valider</string>
 
+    <string name="changeLang">Go to english version</string>
     <string name="textAskComment">Que pensez vous de cette application ?</string>
     <string name="editComment">entrez votre texte</string>
 </resources>
