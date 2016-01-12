@@ -8,9 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Mon maître ne m'a pas encore trouvé d'utilité...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -54,10 +54,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class Main extends Activity  {
-        private Button touchAndClick = null;
-        // On voudra détecter uniquement les clics sur ce bouton
         private Button clickOnly = null;
-        @Override
+
+
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.content_main);
@@ -65,10 +64,11 @@ public class MainActivity extends AppCompatActivity {
             clickOnly = (Button)findViewById(R.id.clickOnly);
 
             clickOnly.setOnClickListener(new View.OnClickListener() {
-                @Override
                 public void onClick(View v) {
-                    //Mon action de fou qui tue tout (genre darkvador qui te met un coup de pression)
+                    Toast.makeText(MainActivity.this, " Quel que soit ton message t'es génial ;) ", Toast.LENGTH_LONG).show();
+                    clickOnly.setEnabled(false);
                 }
+
             });
         }
     }
