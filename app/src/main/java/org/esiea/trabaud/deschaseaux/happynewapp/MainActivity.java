@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button clickOnly = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Mon maître ne m'a pas encore trouvé d'utilité...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
+        });
+
+        clickOnly = (Button)findViewById(R.id.clickOnly);
+
+        clickOnly.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, " Quel que soit ton message t'es génial ;) ", Toast.LENGTH_LONG).show();
+                clickOnly.setEnabled(false);
+            }
+
         });
     }
 
@@ -61,25 +71,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public class Main extends Activity  {
-        private Button clickOnly = null;
-
-
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.content_main);
-
-            clickOnly = (Button)findViewById(R.id.clickOnly);
-
-            clickOnly.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, " Quel que soit ton message t'es génial ;) ", Toast.LENGTH_LONG).show();
-                    clickOnly.setEnabled(false);
-                }
-
-            });
-        }
     }
 }
